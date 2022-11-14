@@ -1,1 +1,415 @@
-hello!
+<!DOCTYPE HTML>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Arkadeep Narayan Chaudhury</title>
+  
+  <meta name="author" content="Arkadeep Narayan Chaudhury">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon" type="image/png" href="images/seal_icon.png">
+</head>
+
+<body>
+  <table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:0px">
+            <td style="padding:2.5%;width:63%;vertical-align:middle">
+              <p style="text-align:center">
+                <name>Arkadeep Narayan Chaudhury</name>
+              </p>
+              <p>I am a graduate student at <a href="https://cmu.edu">Carnegie Mellon University</a>, pursuing a PhD in Robotics at the <a href="https://www.ri.cmu.edu/">Robotics Institute</a>. I am advised by <a href="http://www.cs.cmu.edu/~cga/">Prof. Chris Atkeson</a> and collaborate closely with <a href="http://robotouch.ri.cmu.edu/yuanwz/">Prof. Wenzhen Yuan</a>. My current research interests include tactile sensing, sensor fusion and multimodal sensing for robotic manipulation. 
+              </p>
+              <p>
+                Prior to that I was a graduate student and then a project staff in the Robotics and Design lab at the department of Mechanical Engineering, IISc Bangalore with <a href="https://mecheng.iisc.ac.in/~asitava/">Prof. Ashitava Ghosal</a>. I earned my MSc (Engg.) degree  at the department of <a href="https://mecheng.iisc.ac.in/">Mechanical Engineering</a>  at <a href="https://www.iisc.ac.in/">Indian Institute of Science Bangalore</a>  while working with Prof. Ashitava Ghosal on manipulator design. I graduated from the <a href="http://www.iiests.ac.in/ ">Indian Institute of Engineering Science and Technology, Shibpur</a>  with a B.E. degree in Mechanical Engineering in first class with highest honors. For my undergraduate thesis I worked with <a href="https://www.iiests.ac.in/IIEST/Faculty/mech-ddatta">Prof. Debasis Datta.</a>  
+              </p>
+              <p style="text-align:center">
+                <a href="mailto:arkadeepnc@cmu.edu">Email</a> &nbsp/&nbsp
+                <a href="Resume/resume.pdf">CV</a> &nbsp/&nbsp
+                <!-- <a href="data/JonBarron-bio.txt">Bio</a> &nbsp/&nbsp -->
+                <a href="https://scholar.google.com/citations?user=rZ58Bf8AAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
+                <a href="https://www.linkedin.com/in/arkadeepnc/">LinkedIn</a> &nbsp/&nbsp
+                <a href="https://www.researchgate.net/profile/Arkadeep-Chaudhury">ResearchGate</a> &nbsp/&nbsp
+                <a href="https://github.com/arkadeepnc">GitHub</a>
+              </p>
+            </td>
+            <td style="padding:2.5%;width:40%;max-width:40%">
+              <a href="images/Arka_recent_img.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/Arka_recent_img.jpg" class="hoverZoomLink"></a>
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <heading>Current Research</heading>
+              <p>
+               I am interested in applying computer vision in the emerging field of tactile sensing and how the combined sensing modality can be used in the context of manipulation. 
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr onmouseout="collocated_vision_stop()" onmouseover="collocated_vision_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='collocated_vision_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/collocated_vision.png" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                  <img src='images/collocated_vision.png' width="160">
+                </div>
+                <script type="text/javascript">
+                  function collocated_vision_start() {
+                    document.getElementById('collocated_vision_image').style.opacity = "1";
+                  }
+  
+                  function collocated_vision_stop() {
+                    document.getElementById('collocated_vision_image').style.opacity = "0";
+                  }
+                  CAD_paper_stop()
+                </script>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                <a href="">
+                <papertitle> Using Collocated Vision and Tactile Sensors
+                  for Visual Servoing and Localization   </papertitle>
+                </a>
+                <br>
+                <strong>Arkadeep Narayan Chaudhury </strong>,
+                <a href=""> Timothy Man</a>, 
+                <a href=""> Wenzhen Yuan</a>, 
+                <a href=""> Chris Atkeson</a>
+                <br>
+                <em>Accepted to the IEEE RA-L </em> 
+                <br>
+                <!-- <a href="">Paper</a>
+                /
+                <a href="">Video </a>
+                /
+                <a href=""> Code </a>
+                / -->
+                <a href="./projects/collocated_vision_touch/index.html"> Project </a>
+                /
+                <a href="./data/using_collocated_vision_to_improve_tactile_sensing_ext_abs.pdf"> Extended Abstract </a>
+                <p></p>
+                
+                <p>  In this  work  we  make  the  point  that  coordinating  tactile  sensingwith  vision  by  a  co-located  camera  instead  of  only  consideringthe tactile sensor inputs alone can a) provide useful informationin  advance  of  contact  and  b)  simplify  the  contact  point  andpose estimation problem.
+                </p>
+              </td>
+
+
+
+        </tbody></table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <heading>Previous Research</heading>
+            <p>
+            In the past I have worked on medical robotics, design of mechanical components and parallel robots. I have also done some research on modelling the human three fingered grasp and on optimal motion planning inside constrained spaces. 
+            </p>
+          </td>
+        </tr>
+      </tbody></table>
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+
+          <tr onmouseout="hand_design_stop()" onmouseover="hand_design_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <!-- <div class="two" id='parallem_manip_mc_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/parallem_manip_mc_15.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div> -->
+                <img src='images/hamlyn_paper.png' width="210", height="150">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://www.researchgate.net/publication/333968217_Hand-held_stiffness_measurement_device_for_tissue_analysis">
+              <papertitle>Hand-held stiffness measurement device for tissue analysis</papertitle>
+              </a>
+              <br>
+              Tejas A. Zodage, 
+              <strong>Arkadeep Narayan Chaudhury</strong>,
+              Arun Srivatsan Rangaprasad, Nicolas Zevallos, Howie Choset
+              <br>
+              <em>Hamlyn Symposium on Medical Rootics</em>, 2019
+              <br>
+              <a href="https://www.researchgate.net/publication/333968217_Hand-held_stiffness_measurement_device_for_tissue_analysis">Paper</a> 
+              /
+              <a href="https://github.com/arkadeepnc/Visual-6-DoF-pose-tracker"    > Code</a>                      
+              <p></p>
+              <p> In this short paper, we describe a new method to generate stiffness maps for soft tissues by fusing a stand alone optical tracking system with an off-the-shelf force sensor. </p>
+            </td>
+
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+
+          <tr onmouseout="CAD_paper_stop()" onmouseover="CAD_paper_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='CAD_paper_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/CAD_paper_Movie6.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <img src='images/CAD_paper.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function CAD_paper_start() {
+                  document.getElementById('CAD_paper_image').style.opacity = "1";
+                }
+
+                function CAD_paper_stop() {
+                  document.getElementById('CAD_paper_image').style.opacity = "0";
+                }
+                CAD_paper_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://www.sciencedirect.com/science/article/abs/pii/S0010448518304135?via%3Dihub">
+              <papertitle>Efficient Representation of Ducts and Cluttered Spaces for Realistic Motion Planning of Hyper-Redundant Robots through Confined Paths</papertitle>
+              </a>
+              <br>
+              <a href="https://www.linkedin.com/in/ashwin-k-prabhakaran/">K. P. Ashwin</a>,
+              <strong>Arkadeep Narayan Chaudhury</strong>,
+              <a href="https://mecheng.iisc.ac.in/~asitava/">Ashitava Ghosal</a>
+              <br>
+              <em>Computer Aided Design</em>, 2020 
+              <br>
+              <a href="https://www.researchgate.net/publication/336572380_Efficient_Representation_of_Ducts_and_Cluttered_Spaces_for_Realistic_Motion_Planning_of_Hyper-Redundant_Robots_through_Confined_Paths">paper</a>
+              /
+              <a href="images/CAD_paper_Movie4.mp4">video 1</a>
+              /
+              <a href="images/CAD_paper_Movie5.mp4">video 2</a>
+              /
+              <a href="images/CAD_paper_Movie6.mp4">video 3</a>
+              <p></p>
+              
+              <p> In  this paper,  we  describe  an  optimization  based  approach  for  motion  planning  of  hyper-redundant  robots,  which  results  in  a  natural  motion  of  the  links  through  ducts  and onfined spaces. We demonstrate 3 scenarios:  (video 1) snake-like robots inspecting an industrial pipeline,  (video 2) motion of an endoscopic robot through gastro-intestinal (GI) tract and (video 3) motion of snake-like robots in search and rescue operations.  
+              </p>
+            </td>
+        </tbody></table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+
+        <tr onmouseout="parallem_manip_mc_stop()" onmouseover="parallem_manip_mc_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <!-- <div class="two" id='parallem_manip_mc_image'><video  width=100% height=100% muted autoplay loop>
+              <source src="images/parallem_manip_mc_15.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video></div> -->
+              <img src='images/MMT_paper.png' width="200">
+            </div>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0094114X16303184">
+            <papertitle>Optimum design of multi-degree-of-freedom closed-loop mechanisms and parallel manipulators for a prescribed workspace using Monte Carlo method</papertitle>
+            </a>
+            <br>
+            <strong>Arkadeep Narayan Chaudhury</strong>,
+            <a href="https://mecheng.iisc.ac.in/~asitava/">Ashitava Ghosal</a>
+            <br>
+            <em>Mechanism and Machine Theory</em>, 2017 
+            <br>
+            <a href="https://www.researchgate.net/profile/Ashitava-Ghosal/publication/319310852_Optimum_design_of_multi-degree-of-freedom_closed-loop_mechanisms_and_parallel_manipulators_for_a_prescribed_workspace_using_Monte_Carlo_method/links/59b77053aca2722453a538f5/Optimum-design-of-multi-degree-of-freedom-closed-loop-mechanisms-and-parallel-manipulators-for-a-prescribed-workspace-using-Monte-Carlo-method.pdf">Paper</a>
+                       
+            <p></p>
+            <p>In this work, we use the Monte Carlo method in conjunction with gradient based optimization algorithms to optimally design multi-degree-of-freedom parallel manipulators and closed-loop mechanisms.</p>
+          </td>
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+
+          <tr onmouseout="hand_design_stop()" onmouseover="hand_design_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <!-- <div class="two" id='parallem_manip_mc_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/parallem_manip_mc_15.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div> -->
+                <img src='images/JMR_paper.png' width="180", height="200">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://asmedigitalcollection.asme.org/mechanismsrobotics/article-abstract/10/4/041003/366587">
+              <papertitle>Workspace of Multifingered Hands Using Monte Carlo Method</papertitle>
+              </a>
+              <br>
+              <strong>Arkadeep Narayan Chaudhury</strong>,
+              <a href="https://mecheng.iisc.ac.in/~asitava/">Ashitava Ghosal</a>
+              <br>
+              <em>ASME J. Mechanisms Robotics</em>, 2018
+              <br>
+              <a href="https://www.researchgate.net/profile/Ashitava-Ghosal/publication/322476828_Workspace_of_Multifingered_Hands_Using_Monte_Carlo_Method/links/5a5c3e7aa6fdcc3bfb638405/Workspace-of-Multifingered-Hands-Using-Monte-Carlo-Method.pdf">Paper</a>                           
+              <p></p>
+              <p> Inspired by a multi-jointed human finger and the hand, we propose a six-degree-of-freedom model of a three-fingered robotic hand as a parallel manipulator. We simulate the contact between the fingertips and objects and model the workspace of the human hand. We compare the model with real motion-capture data and show that our method provides a conservative upper bound on the actual workspace. </p>
+            </td>
+
+            <tr onmouseout="spring_design_stop()" onmouseover="spring_design_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <!-- <div class="two" id='parallem_manip_mc_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/parallem_manip_mc_15.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div> -->
+                  <img src='images/JCDE_paper.png' width="180", height="200">
+                </div>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                <a href="https://academic.oup.com/jcde/article/4/3/178/5715409">
+                <papertitle>Analysis of prismatic springs of non-circular coil shape and non-prismatic springs of circular coil shape by analytical and finite element methods</papertitle>
+                </a>
+                <br>
+                <strong>Arkadeep Narayan Chaudhury</strong>,
+                <a href="https://www.iiests.ac.in/IIEST/Faculty/mech-ddatta"> Debasis Datta </a>
+                <br>
+                <em> J. Comp. Des. and Engineering </em>, 2017
+                <br>
+                <a href="https://academic.oup.com/jcde/article/4/3/178/5715409">Paper</a>                           
+                <p></p>
+                <p> This paper presents a methodology for designing prismatic springs of non-circular coil shape and non-prismatic springs of circular coil shape using analytical and numerical methods. </p>
+              </td>
+
+
+        
+
+       
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5df1570c36c5e" data-node="5df1570c36c5e">
+<div class="fl-row-content-wrap">
+    <div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+                    <div class="fl-row-content fl-row-fixed-width fl-node-content">
+    
+<div class="fl-col-group fl-node-5df1570c3679f" data-node="5df1570c3679f">
+        <div class="fl-col fl-node-5df1570c36b04" data-node="5df1570c36b04">
+<div class="fl-col-content fl-node-content">
+        <div class="fl-module fl-module-heading fl-node-5df1570c36bb1" data-node="5df1570c36bb1">
+<div class="fl-module-content fl-node-content">
+    <h3 class="fl-heading">
+    <span class="fl-heading-text">See the camera in&nbsp;action</span>
+</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="fl-col-group fl-node-5df1570c366f1 fl-col-group-equal-height fl-col-group-align-top fl-col-group-custom-width" data-node="5df1570c366f1">
+        <div class="fl-col fl-node-5df1570c3684a fl-col-small" data-node="5df1570c3684a">
+<div class="fl-col-content fl-node-content">
+        <div class="fl-module fl-module-uabb-beforeafterslider fl-node-5df1570c369a9" data-node="5df1570c369a9">
+<div class="fl-module-content fl-node-content">
+    
+<div class="uabb-module-content uabb-before-after-slider">
+<div class="uabb-module-content before-after-slider">
+    <div class="uabb-ba-container baslider-5df1570c369a9 uabb-label-position-center uabb-move-on-hover" 
+                                                                >
+                                            <img class="uabb-before-img" src="https://www.intelrealsense.com/wp-content/uploads/2019/12/lidar_camera_flower_color.jpg" alt="Color"/>
+                        
+                                            <img class="uabb-before-img" src="https://www.intelrealsense.com/wp-content/uploads/2019/12/lidar_camera_flower_depth.jpg" alt="Depth"/>
+                                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+        <div class="fl-col fl-node-5df1570c368f9 fl-col-small" data-node="5df1570c368f9">
+<div class="fl-col-content fl-node-content">
+        <div class="fl-module fl-module-uabb-beforeafterslider fl-node-5df1570c36a56" data-node="5df1570c36a56">
+<div class="fl-module-content fl-node-content">
+    
+<div class="uabb-module-content uabb-before-after-slider">
+<div class="uabb-module-content before-after-slider">
+    <div class="uabb-ba-container baslider-5df1570c36a56 uabb-label-position-center uabb-move-on-hover" 
+                                                                >
+                                            <img class="uabb-before-img" src="https://www.intelrealsense.com/wp-content/uploads/2019/12/lidar_camera_plant_color.jpg" alt="Color"/>
+                        
+                                            <img class="uabb-before-img" src="https://www.intelrealsense.com/wp-content/uploads/2019/12/lidar_camera_plant_depth.jpg" alt="Depth"/>
+                                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+</div>
+</div>
+<div class="fl-row fl-row-fixed-width fl-row-bg-photo fl-node-604bea372243d fl-row-custom-height fl-row-align-center" data-node="604bea372243d">
+<div class="fl-row-content-wrap">
+    <div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+                    <div class="fl-row-content fl-row-full-width fl-node-content">
+    
+<div class="fl-col-group fl-node-604be99586e29 fl-col-group-equal-height fl-col-group-align-center" data-node="604be99586e29">
+        <div class="fl-col fl-node-604be99586e2b fl-col-small fl-visible-desktop-medium" data-node="604be99586e2b">
+<div class="fl-col-content fl-node-content">
+            </div>
+</div>
+        <div class="fl-col fl-node-604be99586e2c fl-col-small" data-node="604be99586e2c">
+<div class="fl-col-content fl-node-content">
+        <div class="fl-module fl-module-rich-text fl-node-604be99586e2f rs-tag-margin" data-node="604be99586e2f">
+<div class="fl-module-content fl-node-content">
+    <div class="fl-rich-text">
+<p><span class="cam-tag cam-tag-d400">Case study</span></p>
+</div>
+</div>
+</div>
+<div class="fl-module fl-module-heading fl-node-604be99586e2e" data-node="604be99586e2e">
+<div class="fl-module-content fl-node-content">
+    <h3 class="fl-heading">
+    <span class="fl-heading-text">Computer vision in robotics comes into&nbsp;focus.</span>
+</h3>
+</div>
+</div>
+<div class="fl-module fl-module-rich-text fl-node-604be99586e30" data-node="604be99586e30">
+<div class="fl-module-content fl-node-content">
+    <div class="fl-rich-text">
+<p>In the last few years demand for computer vision technology that reliably works and performs across a variety of conditions has grown rapidly. Learn more about how robots see and understand the world.</p>
+</div>
+</div>
+</div>
+<div class="fl-module fl-module-button fl-node-604be99586e2d" data-node="604be99586e2d">
+<div class="fl-module-content fl-node-content">
+    <div class="fl-button-wrap fl-button-width-auto fl-button-left">
+        <a href="/robotics/" target="_self" class="fl-button" role="button">
+                        <span class="fl-button-text">Learn more</span>
+                </a>
+            
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p style="text-align:right;font-size:small;">
+                Yep, this webpage template has been stolen from  <a href="https://jonbarron.info/">Jon Barron</a>!
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+      </td> 
+    </tr>
+  </table>
+</body>
+
+</html>
