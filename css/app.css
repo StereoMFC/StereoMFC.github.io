@@ -223,3 +223,40 @@ span.highlight {
     background: #8e8b8b;
     color: white;
 }
+
+* {box-sizing: border-box;}
+
+.img-comp-container {
+  position: relative;
+  height: attr(height); /*should be the same height as the images*/
+}
+
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow:hidden;
+  border: 2px solid white;
+}
+
+.img-comp-img img {
+  display:block;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index:9;
+  cursor: ew-resize;
+  width: 40px;
+  height: 40px;
+  background-color: #161515;
+  opacity: 0.9;
+  border-radius: 0%;
+}
+
+
+
+
+
+  
+
