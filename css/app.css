@@ -229,18 +229,47 @@ span.highlight {
 .img-comp-container {
   position: relative;
   height: attr(height); /*should be the same height as the images*/
+  width: attr(width);
+  /* text-align: center; */
+  
 }
 
+/* Top left text */
+.bottom-left {
+  position: relative;
+  bottom: 20px;
+  left: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Top right text */
+.bottom-right {
+  position: relative;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .img-comp-img {
   position: absolute;
   width: auto;
   height: auto;
   overflow:hidden;
-  border: 2px solid white;
+  border: 2px solid #788d2e;
 }
 
 .img-comp-img img {
   display:block;
+  width: auto;
+  height: auto;
+  overflow:hidden;
+  border: 2px solid rgb(31, 29, 29);
+
 }
 
 .img-comp-slider {
@@ -249,12 +278,11 @@ span.highlight {
   cursor: ew-resize;
   width: 40px;
   height: 40px;
-  background-color: #161515;
+  background-color: #788d2e;
   opacity: 0.9;
-  border-radius: 0%;
+  border-radius: 100%;
+  text-rendering: auto;
 }
-
-
 
 
 
