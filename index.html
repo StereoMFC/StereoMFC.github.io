@@ -71,6 +71,8 @@
           }
         }
             </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -118,6 +120,8 @@
     <!-- <script>
         document.getElementById('author-row').style.maxWidth = document.getElementById("title-row").clientWidth + 'px';
     </script> -->
+
+    
     <div class="container">
         <div class="row">
                 <div class="col-md-3 col-md-offset-4 text-center">
@@ -153,21 +157,10 @@
 <p>     </p>
 <p>     </p>
 
-<!-- <div class="row">
-    <div class="col-sm-9">
-      Level 1: .col-sm-9
-      <div class="row">
-        <div class="col-8 col-sm-6">
-          Level 2: .col-8 .col-sm-6
-        </div>
-        <div class="col-4 col-sm-6">
-          Level 2: .col-4 .col-sm-6
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-<div class="container">     
+<div class="container">    
+    <h1>
+        Abstract
+    </h1> 
     <div class="row">
     <div class="col-md-8  ">
                 <img src="./img/workspace_schematic_NEW.png" alt="AltText" class="img-responsive">
@@ -190,8 +183,25 @@
 </div>
 <p>     </p>
 <p>     </p>
+<div class="container">    
+    <div class="row">
+    <div class="col-md-8  ">
+        <h4>
+           Schematic of our setup. We have seven lights (\(L_1\) to  \( L_7\)) and two cameras (\(C_1\) and  \( C_2\))
+        </h4>
+    </div>
+    <div class=" col-md-4 ">
+        <div class="p-3 border bg-light"></div>
+        <div>
+            <h4>We capture directionally illuminated images </h4>
+            
+        </div>        
+    </div>
+   </div>
+</div>
 <p>     </p>
 <p>     </p>
+
 <div class="container">
     <div class="row">
     <div class="col-md-3  ">
@@ -207,11 +217,120 @@
         <div class="sketchfab-embed-wrapper"> <iframe title="Star_scanned" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="280" height="280" src="https://sketchfab.com/models/7085558c5b2349658e0f9e69a335db3d/embed?ui_theme=dark"> </iframe> </div>
     </div>
 </div>
+</div> 
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-3  ">
+            <h4>
+                Normals of the bas relief
+            </h4> 
+    </div>
+    <div class=" col-md-3 ">
+        <h4>
+            Surface reconstruction of the bas relief
+        </h4> 
+    </div>
+    <div class="col-md-3  ">
+        <h4>
+            Normals of the star
+        </h4> 
+    </div>
+    <div class=" col-md-3 ">
+        <h4>
+            Surface reconstruction of the star
+        </h4> 
+    </div>
 </div>
+</div> 
 <p>     </p>
 <p>     </p>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+        <!-- <image src="img/opening_fig.png" class="img-responsive" alt="overview"><br> -->
+        <p class="text-justify ">
+            Coordinating proximity and tactile imaging by collocating cameras with tactile sensors can 1) provide useful information before contact such as object pose estimates and visually servo a robot
+            to a target with reduced occlusion and higher resolution compared to head-mounted or external depth cameras,
+             2) simplify the contact point and pose estimation problems and help tactile sensing avoid erroneous matches when
+            a surface does not have significant texture or has repetitive texture with many possible matches, and 3) use tactile imaging to further refine contact point and object pose estimation.
+           We demonstrate our results  with objects that have more surface texture than most objects in standard manipulation datasets. 
+          We learn that optic flow needs to be integrated over a substantial amount of camera travel to be useful in predicting movement direction. Most importantly, we also learn that state of the art vision algorithms
+          do not do a good job localizing tactile images
+          on object models, unless a reasonable prior can be
+          provided from collocated cameras.
+        </p>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-5 col-md-offset-3">
+        <h2>
+            Narrated summary
+        </h2>
+        <div class="text-center">
+            <div style="position:relative;padding-top:56.25%;">
+                <iframe src="https://www.youtube.com/embed/GwIF3bNlPnw" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-5 col-md-offset-3">
+        <h2>
+            Slides with our results
+        </h2>
+        <div class="text-center">
+            <div style="position:relative;padding-top:56.25%;">
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTF8WNl8sdtoORXmqUvMbZ3P7SdG8ZqLD58cc56kIGrCCDPW2r79ZOBfRFFjSklwYoljHUeBczknIJD/embed?start=false&loop=false&delayms=15000" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%; mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <p>     </p>
 <p>     </p>
+
+<p>     </p>
+<p>     </p>
+
+<div class="row">
+    <div class="col-md-5 col-md-offset-3">
+        <h2>
+            Demonstration of the data captured and processed using our setup
+        </h2>
+    </div>
+</div>
+
+<!-- column labels  -->
+<div class="container">
+    <div class="row">
+    <div class="col-md-3  ">     
+        <h3>
+            Directionally illuminated images
+        </h3> 
+    </div>
+    <div class=" col-md-3 ">
+        <h3>
+            Normal map
+        </h3>        
+    </div>
+    <div class=" col-md-3 ">
+        <h3>
+            Surface reconstruction
+        </h3> 
+    </div>
+    <div class=" col-md-3 ">
+        <h3>
+            Depth edges overlayed on images
+        </h3> 
+
+    </div>
+    </div>
+</div>
 
 
 <!-- BUNNY -->
@@ -289,7 +408,6 @@
 <p>     </p>
 <p>     </p>
 <p>     </p>
-
 <p>     </p>
 <p>     </p>
 <p>     </p>
@@ -351,10 +469,7 @@
                     <div class="img-comp-img img-comp-overlay">
                       <img src="./img/buddha_edges_scaled.png" width="262" height="450">
                     </div>
-                <script>
-                    /*Execute the Function*/
-                    compare();  
-                </script>
+
             </div>
         </div>
     </div>
@@ -365,7 +480,7 @@
 
 
 <p class="text-center"><strong></strong> </p>
-<p style="text-align:center;font-size:larger;"> Some more single view 3D reconstructions from our pipeline. </p>
+<p style="text-align:center;font-size:x-large;"> Some more single view 3D reconstructions from our pipeline. </p>
 
 <p>     </p>
 <p>     </p>
@@ -397,20 +512,204 @@
 
 <p>     </p>
 <p>     </p>
+
     
 
-    <div>
-    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:center;font-size:small;">
-              The source code and design of this webpage is adapted from <a href="https://dorverbin.github.io/refnerf/"> Ref-NeRF project page</a>. We would like to thank the authors for the inspiration.
-              </p>
-            </td>
-          </tr>
-    </tbody></table>
+<div class="row">
+    <div class="col-md-5 col-md-offset-3">
+        <h2>
+            Demonstration of picking up tasks using our setup
+        </h2>
+        <h3>
+            We could pick up objects with arbitrarily oriented pickable faces.
+        </h3>
+        
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-6  ">
+        <iframe src="https://drive.google.com/file/d/1bsYlmZ8yqL8HOp48eWWbog_31sca6GQN/preview" width="580" height="400" allow="autoplay"></iframe>
+    </div>
+    <div class=" col-md-6 ">
+        <iframe src="https://drive.google.com/file/d/1KES0bznjq-xAzwAfgrgSr7vM2g2mhVNP/preview" width="580" height="400" allow="autoplay"></iframe>
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-6  ">
+        <iframe src="https://drive.google.com/file/d/1sfjBBohKaW6siKldmdF5qW2oa5HoZ2bB/preview" width="580" height="400" allow="autoplay"></iframe>
+    </div>
+    <div class=" col-md-6 ">
+        <iframe src="https://drive.google.com/file/d/1pWVL4vfvFGIy1ixQfcbvIspIbYEhWkUe/preview" width="580" height="400" allow="autoplay"></iframe>
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-6  ">
+        <iframe src="https://drive.google.com/file/d/1jxxdAr7e9TxQ_ZG7MJ_ILpFMTZw_MgFT/preview" width="580" height="400" allow="autoplay"></iframe>
+    </div>
+    <div class=" col-md-6 ">
+        <iframe src="https://drive.google.com/file/d/1GmhQQ7FtYeaLETVjtpWNImMxojsXZrXJ/preview" width="580" height="400" allow="autoplay"></iframe>
+    </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-5 col-md-offset-3">
+        <h3>
+            We could also pick up camouflaged objects
+        </h3>
+        
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class=" col-md-6 ">
+            <iframe src="https://drive.google.com/file/d/1hM3pmliAK2DTGIuZHtXtZHtZ182_Jx8q/preview" width="580" height="400" allow="autoplay"></iframe>
+        </div>
+    <div class="col-md-6  ">
+        <iframe src="https://drive.google.com/file/d/12gUjRbQjouHLoBGCQwPU3YYoSXOONt5i/preview" width="580" height="400" allow="autoplay"></iframe>
+    </div>
+    </div>
+</div>
+<p style="text-align:center;font-size:larger;"> The robot demonstrations have not been sped up. </p>
+<p>     </p>
+<p>     </p>
+<p>     </p>
+<p>     </p>
+
+<div class="container">
+    <div class="row">
+    <div class=" col-md-4 ">
+            <div class="img-comp-container">
+                    <div class="img-comp-img">
+                      <img src="./img/kisses_twisted.objnormal_rendered_cropped.png" width="385" height="393">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                      <img src="./img/kisses_twisted.objnormal_src_cropped.png" width="385" height="393">
+                    </div>
+
+            </div>
+        </div>
+        <div class=" col-md-4 ">
+            <div class="img-comp-container">
+                    <div class="img-comp-img">
+                      <img src="./img/spot.objnormal_rendered.png" width="385" height="303">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                      <img src="./img/spot.objnormal_src.png" width="385" height="303">
+                    </div>
+
+            </div>
+        </div>
+        <div class=" col-md-4 ">
+            <div class="img-comp-container">
+                    <div class="img-comp-img">
+                      <img src="./img/star.objnormal_rendered.png" width="385" height="380">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                      <img src="./img/star.objnormal_src.png" width="385" height="380">
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>     </p>
+<p>     </p>
+<p>     </p>
+<p>     </p>
+
+<div class="container">
+    <div class="row">
+    <div class=" col-md-4 ">
+            <div class="img-comp-container">
+                    <div class="img-comp-img">
+                      <img src="./img/kisses.objnormal_rendered.png" width="385" height="391">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                      <img src="./img/kisses.objnormal_src.png" width="385" height="391">
+                    </div>
+
+            </div>
+        </div>
+        <div class=" col-md-4 ">
+            <div class="img-comp-container">
+                    <div class="img-comp-img">
+                      <img src="./img/bunny_cut.objnormal_rendered.png" width="385" height="454">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                      <img src="./img/bunny_cut.objnormal_src.png" width="385" height="454">
+                    </div>
+
+            </div>
+        </div>
+        <div class=" col-md-4 ">
+            <div class="img-comp-container">
+                    <div class="img-comp-img">
+                      <img src="./img/buddha_cut.objnormal_rendered_better.png" width="385" height="658">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                      <img src="./img/buddha_cut.objnormal_src_better.png" width="385" height="658">
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>     </p>
+<p>     </p>
+<p>     </p>
+<p>     </p>
+
+<!-- pose est movies -->
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-3  ">
+                <img src="./img/text_pyramid_pose_est.gif" alt="AltText" class="img-responsive">
+    </div>
+    <div class=" col-md-3 ">
+        <img src="./img/bunny_pose_est.gif" alt="AltText" class="img-responsive">
     </div>
 
+    <div class=" col-md-3 ">
+        <img src="./img/real_demo_large_basin_of_attraction.gif" alt="AltText" class="img-responsive">
+    </div>
 
+    <div class=" col-md-3 ">
+        <img src="./img/pose_est_demo_bas_relief.gif" alt="AltText" class="img-responsive">
+    </div>
+
+    </div>
+</div>
+
+
+<div>
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+        <td style="padding:0px">
+            <br>
+            <p style="text-align:center;font-size:small;">
+            The source code and design of this webpage is adapted from <a href="https://dorverbin.github.io/refnerf/"> Ref-NeRF project page</a>. We would like to thank the authors for the inspiration.
+            </p>
+        </td>
+        </tr>
+</tbody></table>
+</div>
+
+    <script>
+        /*Execute the Function*/
+        compare();  
+    </script>
 </body></html>
