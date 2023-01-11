@@ -236,7 +236,7 @@ span.highlight {
 
 /* Top left text */
 .bottom-left {
-  position: relative;
+  /* position: relative; */
   bottom: 20px;
   left: 20px;
   background-color: black;
@@ -247,7 +247,7 @@ span.highlight {
 
 /* Top right text */
 .bottom-right {
-  position: relative;
+  /* position: relative; */
   bottom: 20px;
   right: 20px;
   background-color: black;
@@ -285,6 +285,7 @@ span.highlight {
 }
 
 
-
+.br30 {margin-bottom: 30em}
+.br50 {margin-bottom: 50em}
   
 
