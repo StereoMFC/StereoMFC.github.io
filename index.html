@@ -1,13 +1,208 @@
-
-
-<div>
-    <h2>Project page for A Multi-flash Stereo Camera for Photo-realistic Capture of Small Scenes. Please check back on February 1 for updates!</h2>
+<!DOCTYPE html>
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
-</div>   
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-<div class="row">
-    <div class="col-md-12  ">
-                <img src="./img/MultiFlashStereoCamera-674S1-representative_image.jpg" alt="AltText" class="img-responsive">
+    <title>StereoMFC</title>
+
+    <!-- mirror: F0%9F%AA%9E&lt -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <!-- Required Core Stylesheet -->
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <!-- Optional Theme Stylesheet -->
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/codemirror.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/image_slider.js"></script>
+    <!-- <script src="js/video_comparison.js"></script> -->
+    <script src="js/app.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script>
+        function compare() {
+          var x, i;
+          x = document.getElementsByClassName("img-comp-overlay");
+          for (i = 0; i < x.length; i++) {
+            compareImages(x[i]);
+          }
+          function compareImages(img) {
+            var slider, img, clicked = 0, w, h;
+            w = img.offsetWidth;
+            h = img.offsetHeight;
+            img.style.width = (w / 2) + "px";
+        
+            slider = document.createElement("DIV");
+            slider.setAttribute("class", "img-comp-slider");
+            img.parentElement.insertBefore(slider, img);
+            slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+            slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+            
+            slider.addEventListener("mousedown", slideReady);
+            window.addEventListener("mouseup", slideFinish);
+         
+            function slideReady(e) {
+              e.preventDefault();
+              clicked = 1;
+              window.addEventListener("mousemove", slideMove);
+              window.addEventListener("touchmove", slideMove);
+            }
+            function slideFinish() {
+              clicked = 0;
+            }
+            function slideMove(e) {
+              var pos;
+              if (clicked == 0) return false;
+              pos = getCursorPos(e)
+              if (pos < 0) pos = 0;
+              if (pos > w) pos = w;
+              slide(pos);
+            }
+            function getCursorPos(e) {
+              var a, x = 0;
+              e = (e.changedTouches) ? e.changedTouches[0] : e;
+              a = img.getBoundingClientRect();
+              x = e.pageX - a.left;
+              x = x - window.pageXOffset;
+              return x;
+            }
+            function slide(x) {
+              img.style.width = x + "px";
+              slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+            }
+          }
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <div class="container" id="header" style="text-align: center; margin: auto;">
+        <div class="row" id="title-row" style="max-width: 100%; margin: 0 auto; display: inline-block">
+            <h2 class="col-md-12 text-center" id="title">
+                A Multi-flash Stereo Camera for Photo-realistic Capture of Small Scenes <br>
+                <small>
+                    <!-- (In Submission to WACV 2024) -->
+                </small>
+            </h2>
+        </div>
+        <div class="row" id="author-row" style="margin:0 auto;">
+            <div class="col-md-12 text-center" style="display: table; margin:0 auto">
+                <table class="author-table" id="author-table">
+                   Anonymous authors.
+                </table>
+            </div>
+            <div class="col-md-12 text-center" style="display: table; margin:0 auto">
+                <table class="author-table" id="uni-table">
+                    <tr>
+                        <td>
+                            <!-- <a style="text-decoration:none" href="https://computationalimaging.rice.edu"> Computational Imaging Lab, Rice University </a> -->
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- <script>
+        document.getElementById('author-row').style.maxWidth = document.getElementById("title-row").clientWidth + 'px';
+    </script> -->
+
+    
+    <div class="container">
+        <div class="row">
+                <div class="col-md-3 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="./assets/StereoMFC_compressed.pdf">
+                            <img src="./assets/small_images/pdf.png" height="50px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li> 
+                            <a href="https://drive.google.com/file/d/1Plxt6LY8L6hpYtLvQlYKjpBspTXi58Kr/preview">
+                                <img src="./assets/small_images/code_icon.png" height="50px"> 
+                                <h4><strong>Code</strong></h4> 
+                                <h5> Coming soon </h5> 
+                            </a>
+                        </li> 
+                        <li>
+                                <a href="">
+                                <img src="./assets/small_images/data.png" height="50px"> 
+                                <!-- <font size="-1">(Coming Soon)</font> <br>  -->
+                                <h4><strong>Data</strong></h4> 
+                                <h5> Coming soon </h5> 
+                                </a>
+                        </li>
+
+                    </ul>
+                </div>
+        </div>
+    </div>
+
+<p>     </p>
+<p>     </p>
+
+<p>     </p>
+<p>     </p>
+<div class="container">    
+
+    <div class="row">
+    <div class="col-md-16  ">
+                <img src="./assets/MultiFlashStereoCamera-674S1-representative_image.jpg" alt="" class="img-responsive">
                 <!-- <img src="./img/workspace_schematic_NEW.png" alt="AltText" style="width: 771px;;height: 578px;"> -->
     </div>
+    <!-- <div class=" col-md-4 ">
+        <div class="p-3 border bg-light"></div>
+        <div>
+            <div class="row">
+                <img src="./img/sfs_bas_relief.gif" alt=""  style="width:280px;height:280px;">
+            </div>
+            <p>     </p>
+            <p>     </p>
+            <div class="row">
+                <img src="./img/sfs_images_star.gif" alt=""  style="width:280px;height:280px;">
+            </div>
+        </div>        
+    </div> -->
    </div>
+</div>
+<p>     </p>
+<p>     </p>
+
+
+
+
+
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+        <td style="padding:0px">
+            <br>
+            <p style="text-align:center;font-size:small;">
+            The source code and design of this webpage is adapted from <a href="https://dorverbin.github.io/refnerf/"> Ref-NeRF project page</a>. We would like to thank the authors for the inspiration.
+            </p>
+        </td>
+        </tr>
+</tbody></table>
+</div>
+
+<!-- <p class="br50"></p> -->
+
+
+<script>
+    /*Execute the Function*/
+    compare();  
+</script>
+
+
+
+</body></html>
+
+
