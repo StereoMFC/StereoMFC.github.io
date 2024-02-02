@@ -155,7 +155,7 @@
 <div class="container">    
 
     <div class="row">
-    <div class="col-md-16  ">
+    <div class="col-md-12  ">
                 <img src="./assets/MultiFlashStereoCamera-674S1-representative_image.jpg" alt="" class="img-responsive">
                 <!-- <img src="./img/workspace_schematic_NEW.png" alt="AltText" style="width: 771px;;height: 578px;"> -->
     </div>
@@ -177,9 +177,35 @@
 <p>     </p>
 <p>     </p>
 
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>
+            StereoMFC (stereo multi-flash camera) prototype
+        </h2>
+
+        <!-- <iframe src="file_name.pdf" style="width: 100%;height: 100%;border: none;"></iframe>
+         -->
+        <p class="text-justify ">
+            For our prototype, we use a pair of machine vision cameras (
+                <a href="https://www.edmundoptics.com/p/gs3-u3-41c6c-c-1-grasshopper-usb-30-color-camera/30772/">FLIR Grashopper</a>
+                ) with a 1'', 4MP CMOS imaging sensor of resolution of 2048 \(\times\) 2048 pixels. As we focus mainly on small scenes, we use two sets of lenses that yield a narrow field of view -- 12mm and 16mm fixed focal length lens (<a href="https://www.edmundoptics.com/p/12mm-c-series-fixed-focal-length-lens/14949/">Edmund Optics</a>). We use 80W 5600K white LEDs (<a href="https://www.digikey.com/en/products/detail/creeled-inc/CXA2540-0000-000N00W257F/4437055">CREE LED</a>) as flashes driven by a DC power supply and switched though MOSFETs controlled with a Arduino over USB. At each pose of our rig, we captured 12 images with each of the flash lights on (one light at a time) and one HDR image per camera. The cameras are configured to return a 12 bit Bayer image which is then de-Bayered to yield a 16 bit RGB image. We set the left and right cameras to be triggered simultaneously by an external synchronization signal. We configured the camera frame acquiring and the flash triggering programs to run on the same thread and synchronized the frame acquisition with the flashes through blocking function calls.
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-4  ">
+        <img src="./assets/MFC_schematic.png" alt="AltText" style="width:640px;height:400px;">
+    </div>
+    <div class=" col-md-4 col-md-offset-3">
+        <div class="sketchfab-embed-wrapper"> <iframe title="Assembly 1" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="480" height="480" src="https://sketchfab.com/models/42156b5886f64eb1a705a952c7f8d124/embed?ui_theme=dark"> </iframe> </div>
+    </div>
+    </div>
+</div>
 
 
-
+<!-- <p class="br50"></p> -->
 
 <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr>
@@ -193,7 +219,6 @@
 </tbody></table>
 </div>
 
-<!-- <p class="br50"></p> -->
 
 
 <script>
