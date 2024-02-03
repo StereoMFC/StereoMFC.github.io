@@ -306,12 +306,78 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <p class="text-justify ">
-            Our system captures the 
+            Our system captures the scene using a stereoMFC and yields color images (left and right channels), aligned depth maps (left and right),  normals and depth edges. We use this to model the scene's radiance and geometry. After the scene's diffuse color has been captured, we use the multi-flash images and a truncated set of the Disney BRDF parameters to model the illumination dependent aspects of the scene. 
         </p>
         <img src="./assets/training_schedule.png" alt="" class="img-responsive">
     </div>
 </div>
 
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>
+            Similarities with AdaptiveShells [Wang et al. SIGGRAPH Asia 2023]
+        </h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-15">
+<table width="100%">
+    <tr>
+        <td align="center" valign="center" width="40%">
+            <h4> Recon.(left) vs GT(right)</h4>
+        </td>
+        <td align="center" valign="center" width="20%">
+            <h4>Crops</h4>
+        </td>
+        <td align="center" valign="center" width="40%">
+            <h4>Shells</h4>
+        </td>
+
+    </tr>
+    <tr>
+        <td align="center" valign="center" width="40%">
+            <div class="img-comp-container">
+                <div class="img-comp-img">
+                  <img src="./assets/diffuse_scene_recon.png" width="370" height="370">
+                </div>
+                <div class="img-comp-img img-comp-overlay">
+                  <img src="./assets/diffuse_scene_GT.png" width="370" height="370">
+                </div>
+        </div>
+        </td>
+        <td align="right" valign="center" width="20%">
+            <img src="./assets/diffuse_scene_crop.png" width="163" height="370">
+        </td>
+        <td align="center" valign="center" width="40%">
+            <div class="sketchfab-embed-wrapper"> <iframe title="adashell_diffuse_scene" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="370" height="370" src="https://sketchfab.com/models/b1acb750e831484cb18c17d8c9b0a33e/embed"> </iframe> </div>
+        </td>
+    </tr>
+    <!-- ----------------------------------- -->
+    <tr>
+        <td align="center" valign="center" width="40%">
+            <div class="img-comp-container">
+                <div class="img-comp-img">
+                  <img src="./assets/ponies_recon.png" width="370" height="370">
+                </div>
+                <div class="img-comp-img img-comp-overlay">
+                  <img src="./assets/ponies_gt.png" width="370" height="370">
+                </div>
+        </div>
+        </td>
+        <td align="right" valign="center" width="20%">
+            <img src="./assets/ponies_crop.png" width="163" height="370">
+        </td>
+        <td align="center" valign="center" width="40%">
+            <div class="sketchfab-embed-wrapper"> <iframe title="adashell_ponies" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="370" height="370" src="https://sketchfab.com/models/2e0a0b4319a6484e94281e2f138a776a/embed"> </iframe> </div>
+        </td>
+    </tr>
+</table>
+</div>
+</div>
+</div>
 
 <!-- ----------------------------------- -->
 
@@ -326,7 +392,6 @@
         </tr>
 </tbody></table>
 </div>
-
 
 
 <script>
