@@ -336,7 +336,7 @@
 <table width="100%">
     <tr>
         <td align="center" valign="center" width="40%">
-            <h4> Recon.(left) vs GT(right)</h4>
+            <h4> GT(left) vs Reconstruction(right)</h4>
         </td>
         <td align="center" valign="center" width="20%">
             <h4>Crops</h4>
@@ -388,6 +388,109 @@
 </div>
 </div>
 
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>
+            Processing geometry with thin details
+        </h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12  ">
+<table width="100%">
+    <tr>
+        <td align="center" valign="center" width="25%">
+            <h4>RGB and depth (Left, geometry 1)</h4>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <h4>Normals and edges (geometry 1)</h4>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <h4>RGB and depth (Right, geometry 2)</h4>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <h4>Normals and edges (Right, geometry 2)</h4>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:100%">
+                <video class="video" id="gnome10" loop playsinline autoPlay muted src="assets/movies/left_straight_wig_rgb_depth.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome10Merge"></canvas>
+            </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:100%">
+                <video class="video" id="gnome11" loop playsinline autoPlay muted src="assets/movies/left_straight_wig_normal_edges.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome11Merge"></canvas>
+            </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:100%">
+                <video class="video" id="gnome12" loop playsinline autoPlay muted src="assets/movies/right_curly_wig_rgb_depth.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome12Merge"></canvas>
+            </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:100%">
+                <video class="video" id="gnome13" loop playsinline autoPlay muted src="assets/movies/right_curly_wig_normal_edges.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome13Merge"></canvas>
+            </div>
+        </td>
+    </tr>
+</table>
+
+</div>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h3>
+            Although a voumetric representation is more photorealistic for capturing thin geometries, we present a mesh based representation and the shells extracted by our method. 
+        </h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-15">
+<table width="100%">
+    <tr>
+        <td align="center" valign="center" width="25%">
+            <h4>Geometry 1 : Textured mesh</h4>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <h4>Geometry 1 : Shell</h4>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <h4>Geometry 2 : Textured mesh</h4>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <h4>Geometry 2 : Shell</h4>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" valign="center" width="25%">
+            <div class="sketchfab-embed-wrapper"> <iframe title="adashell_ponies" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="false" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="290" height="290" src="https://sketchfab.com/models/39f7ba68d25e45e6adfade8af035305f/embed"> </iframe> </div>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <div class="sketchfab-embed-wrapper"> <iframe title="adashell_ponies" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="false" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="290" height="290" src="https://sketchfab.com/models/e28d5eacf97f4894aa2f5f0f2deb1dfa/embed"> </iframe> </div>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <div class="sketchfab-embed-wrapper"> <iframe title="adashell_ponies" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="false" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="290" height="290" src="https://sketchfab.com/models/eabf2577752e42c9831699eeb4977479/embed"> </iframe> </div>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <div class="sketchfab-embed-wrapper"> <iframe title="adashell_ponies" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="false" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="290" height="290" src="https://sketchfab.com/models/9cf25a24a3844016848883ce3278c202/embed"> </iframe> </div>
+        </td>
+    </tr>
+</table>
+
+</div>
+</div>
+</div>
 <!-- ----------------------------------- -->
 
 <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
