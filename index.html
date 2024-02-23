@@ -682,6 +682,61 @@
     </div>
 </div>
 
+<p class="br20"></p>
+
+<!-- ----------------------------------- -->
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h3>
+            Reconstructing a very shiny object
+        </h3>
+        <h5>
+            The reconstruction is created with 7 RGBD images from 4 stereo pairs (one RGBD reserved for validation). Time taken to refine geometry and base color: ~40 mins (100K grad steps). Time to recover partial BRDF model (~4 hrs). We recovered specularity, roughness and \(r_0\), the Fresnel reflection component. The web based display tool used here ignores \(r_0\). 
+        </h5>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+<table width="100%">
+    <tr>
+        <td align="center" valign="center" width="33%">
+            <h4>Captured RGB and Depth </h4>
+        </td>
+        <td align="center" valign="center" width="33%">
+            <h4>Multi-flash (12 x 8 x 2) (Left & Right)</h4>
+        </td>
+        <td align="center" valign="center" width="33%">
+            <h4>Mesh with truncated BRDF texture</h4>
+        </td>
+        <!-- <td align="center" valign="center" width="25%">
+            <h4>Normals and edges (Right)</h4>
+        </td> -->
+    </tr>
+    <tr>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:92%">
+                <video class="video" id="gnome14" loop playsinline autoPlay muted src="assets/movies/aluminum_star_rgb_normals.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome14Merge"></canvas>
+            </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:96%">
+                <video class="video" id="gnome15" loop playsinline autoPlay muted src="assets/movies/aluminum_star_multi_light.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome15Merge"></canvas>
+            </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <div class="sketchfab-embed-wrapper"> <iframe title="lego_plant_wildlight_smaller_param_set" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="370" height="360" src="https://sketchfab.com/models/fd4bfba668044c5fa1451eb7bda434d8/embed"> </iframe> </div>
+        </td>
+    </tr>
+</table>
+</div>
+</div>
+</div>
+
+
 <!-- ----------------------------------- -->
 <p class="br20"></p>
 
