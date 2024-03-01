@@ -736,6 +736,79 @@
 </div>
 </div>
 
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h3>
+            Relighting faces with a single stereo pair
+        </h3>
+        <h5>
+            The reconstruction is created with 1 stereo pair -- 2 RGBD images. Time taken to refine geometry and base color: ~20 mins (100K grad steps). Time to recover partial BRDF model (~4 hrs). We recovered specularity, roughness and \(r_0\), the Fresnel reflection component. The movie is rendered approximately from the view of a camera placed between the stereo cameras. We use Blenders keyframing tool to manually choose 20 locations of the light 10 on the plane of the camera and 10 around the object and render 200 relit images using Blender. Blender does not support our exact reflectace model so like before, we drop \(r_0\), the Fresnel reflection component. We use Blender's Cycles renderer with an SPP of 2048 @ 1536x1536 pixels and rescale it to 370 x 370 pixels below. 
+        </h5>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+<table width="100%">
+    <tr>
+        <td align="center" valign="center" width="33%">
+            <h4>Multi-flash pair (12 x 2) (Left & Right) </h4>
+        </td>
+        <td align="center" valign="center" width="33%">
+            <h4>Normals and edges (Left & Right)</h4>
+        </td>
+        <td align="center" valign="center" width="33%">
+            <h4>200 new light positions @ 1FPS</h4>
+        </td>
+        <!-- <td align="center" valign="center" width="25%">
+            <h4>Normals and edges (Right)</h4>
+        </td> -->
+    </tr>
+    <tr>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:100%">
+                <video class="video" id="gnome16" loop playsinline autoPlay muted src="assets/movies/sarv_multi_light.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome16Merge"></canvas>
+            </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:96%">
+                <video class="video" id="gnome17" loop playsinline autoPlay muted src="assets/movies/sarv_depth_edges_normals.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome17Merge"></canvas>
+            </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <video width="370" height="370" controls>
+                <source src="assets/movies/sarv_relit_synth.mp4" type="video/mp4">
+              </video>
+        </td>
+    </tr>
+
+    <tr>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:100%">
+                <video class="video" id="gnome18" loop playsinline autoPlay muted src="assets/movies/chrisrelight_stereo.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome18Merge"></canvas>
+            </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:96%">
+                <video class="video" id="gnome19" loop playsinline autoPlay muted src="assets/movies/chris_depth_normals.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome19Merge"></canvas>
+            </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <video width="370" height="370" controls>
+                <source src="assets/movies/chris_relight_synth.mp4" type="video/mp4">
+              </video>
+        </td>
+    </tr>
+
+</table>
+</div>
+</div>
+</div>
 
 <!-- ----------------------------------- -->
 <p class="br20"></p>
