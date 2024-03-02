@@ -753,10 +753,10 @@
 <table width="100%">
     <tr>
         <td align="center" valign="center" width="33%">
-            <h4>Multi-flash pair (12 x 2) (Left & Right) </h4>
+            <h4>Multi-flash pair (12 x 2) (L & R) </h4>
         </td>
         <td align="center" valign="center" width="33%">
-            <h4>Normals and edges (Left & Right)</h4>
+            <h4>Normals and edges (or specularities) (L & R)</h4>
         </td>
         <td align="center" valign="center" width="33%">
             <h4>200 new light positions @ 1FPS</h4>
@@ -801,6 +801,27 @@
         <td align="center" valign="center" width="100%">
             <video width="370" height="370" controls>
                 <source src="assets/movies/chris_relight_synth.mp4" type="video/mp4">
+              </video>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:100%">
+                <video class="video" id="gnome20" loop playsinline autoPlay muted src="assets/movies/al_plate_mfc.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome20Merge"></canvas>
+            </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:92%">
+                <video class="video" id="gnome21" loop playsinline autoPlay muted src="assets/movies/al_plate_spec_normals.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome21Merge"></canvas>
+            </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <video width="370" height="370" controls>
+                <source src="assets/movies/self_al_plate_relight_sym.mp4" type="video/mp4">
               </video>
         </td>
     </tr>
