@@ -831,6 +831,27 @@
 </div>
 </div>
 
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h3>
+            Accuracy of reconstructing synthetic scanes. 
+        </h3>
+        <p class="text-justify ">
+        <!-- <h4> -->
+            For <em><b>un-posed</b></em> RGBD images, we compare the accuracy of reconstructing the scene using VolSDF\(^{\dagger}\) and NeUS\(^{\dagger}\) with NeuralRGBD[Azinovic et al. 2022] and BundleFusion[Daiet al. 2017]. We report normalized chamfer distances (<u>lower is better</u>) across four synthetic scenes from BlendSwap.com. We use the pipeline described in section 4.1 to estimate the camera poses. For <em><b>posed</b></em> synthetic RGBD sequences, we compare the accuracy of reconstruction between VolSDF$^{\dagger}$ and PointSLAM\cite{Sandstrom2023ICCV}. We report the mean \(L_1\) distances in cm (<u>lower is better</u>) across eight synthetic scenes from the Replica Dataset. For our experiments we use 15 temporally equidistant poses from 2000 RGBD images per scene in the dataset and train VolSDF\(^{\dagger}\) for 1500 iterations (\( \sim \) 21K gradient steps). For posed images, our errors on this simulated dataset closely reflect the performance of [Gropp et al. 2020] for approximating surfaces from noise-free point clouds. We report an average improvement of 81% over PointSLAM.
+        <!-- </h4> -->
+    </p>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h5>
+            <img src="./assets/reconstruction_benchmarks.png" alt="" class="img-responsive">
+        </h5>
+    </div>
+</div>
+
 <!-- ----------------------------------- -->
 <p class="br20"></p>
 
