@@ -915,6 +915,69 @@
         </td>
     </tr>
 </table>
+</div>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h3>
+            View-point diversity or depth is required.
+        </h3>
+        <h5>
+            <p class="text-justify ">
+                In absence of depth, radiance based methods need viewpoint diversity to disambiguate between appearance and geometry. Additionally, monocular supervision is very dependent on the scene-network combination. We incorporate metric depth from stereo to capture appearance and geometry. Below we show our result on training on the ReNE reflective data sequence. ReLight My NeRF [Toschi et al. CVPR '23'] has a low view point diversity and does not supply metric depth. Our experiment below tries to train a radiane model (architechture v5 in Toschi et al.). With the given description and hyperparameters, our re-implementation of architechture v5 was unable to achieve the reported reconstruction quality. Additionally, monocular methods (as recommended by MonoSDF [Yu et al '22]) did not generate meaningful supervisions on this sequence. As a result, although we made some progress in view interpolation, the geometry recoverd in the process is meaningless.  
+        </p>
+        </h5>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+<table width="100%">
+    <tr>
+        <td align="center" valign="center" width="33%">
+            <h4>ReLightMyNeRF training images </h4>
+        </td>
+        <td align="center" valign="center" width="33%">
+            <h4> Reconstructed radiance (PSNR 23.5)</h4>
+        </td>
+        <td align="center" valign="center" width="33%">
+            <h4>Reconstructed shape</h4>
+        </td>
+        <!-- <td align="center" valign="center" width="25%">
+            <h4>Normals and edges (Right)</h4>
+        </td> -->
+    </tr>
+    <tr>
+        <td align="center" valign="center" width="100%">
+            <video width="370" height="281" controls>
+                <source src="assets/movies/rene_train.mp4" type="video/mp4">
+              </video>
+        </td>
+        <td align="right" valign="center" width="200%">
+            <div class="img-comp-container">    
+                <div class="img-comp-img">
+                  <img src="./assets/rene_gt_big.png" width="259" height="197">
+                </div>
+                <div class="img-comp-img img-comp-overlay">
+                  <img src="./assets/rene_reconst_big.png" width="259" height="197">
+                </div>
+        </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <video width="370" height="281" controls>
+                <source src="assets/movies/ply_rene_cup.mp4" type="video/mp4">
+              </video>
+        </td>
+    </tr>
+
+</table>    
+</div>
+</div>
+</div>
+
 
 
 <!-- ----------------------------------- -->
