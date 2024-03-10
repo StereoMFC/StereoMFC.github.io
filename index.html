@@ -691,7 +691,9 @@
             Reconstructing a very shiny object
         </h3>
         <h5>
+            <p class="text-justify ">            
             The reconstruction is created with 7 RGBD images from 4 stereo pairs (one RGBD reserved for validation). Time taken to refine geometry and base color: ~40 mins (100K grad steps). Time to recover partial BRDF model (~4 hrs). We recovered specularity, roughness and \(r_0\), the Fresnel reflection component. The web based display tool used here ignores \(r_0\). 
+        </p>
         </h5>
     </div>
 </div>
@@ -742,7 +744,9 @@
             Relighting faces with a single stereo pair
         </h3>
         <h5>
+            <p class="text-justify ">
             The reconstruction is created with 1 stereo pair -- 2 RGBD images. Time taken to refine geometry and base color: ~20 mins (100K grad steps). Time to recover partial BRDF model (~4 hrs). We recovered specularity, roughness and \(r_0\), the Fresnel reflection component. The movie is rendered approximately from the view of a camera placed between the stereo cameras. We use Blenders keyframing tool to manually choose 20 locations of the light 10 on the plane of the camera and 10 around the object and render 200 relit images using Blender. Blender does not support our exact reflectace model so like before, we drop \(r_0\), the Fresnel reflection component. We use Blender's Cycles renderer with an SPP of 2048 @ 1536x1536 pixels and rescale it to 370 x 370 pixels below. 
+        </p>
         </h5>
     </div>
 </div>
@@ -856,10 +860,12 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <h3>
-            Collecting data with a manipulator versus a turntable
+            Collecting data with a manipulator versus a turn-table
         </h3>
         <h5>
-            At its core, our method integrates a set of posed RGBD images to train a neural 3D model. As implemented, we assume the scene to be static and the rig moving. However, our pipeline can accommodate a turntable. Note that commercial turntable scanners integrate the data using a combination of the encoders on the turntable and point cloud registration. The sytem's camera-projector pair is tuned to yield dense scene points at close distances. However our stereo backend has a limit on the disparity range and will break at those resolutions. The lowest camera-object distance we can accommodate is 400 mm with a 16 mm lens (see "Reconstructing a very shiny object" demo above), where we struggle with the learnt stereo over-smoothing the disparities. Therefore, to incorporate a turntable to our pipeline, we remove visual features from the background and force our hybrid RGBD pose estimation system (sec 4.1) to focus on the foreground using depth based masking. The depth masks are not perfect, as a result, the pose estimates for data collected with a turn table are worse than the case when the robot is moving. In the example below we take 6 RGBD images -- 3 stereo pairs in case for the moving camera, 6 RGBD captures (left channel) with the rotating turntable. Train on 5 and test on 1 image, we use AdaShell\(^\dagger\) for this demo. The quality of reconstruction suffers a bit for the case with turntable, but more importantly, the current pose estimation pipeline breaks before the turntable can rotate the object significantly. 
+            <p class="text-justify ">
+            At its core, our method integrates a set of posed RGBD images to train a neural 3D model. As implemented, we assume the scene to be static and the rig moving. However, our pipeline can accommodate a turn-table. Note that commercial turn-table scanners integrate the data using a combination of the encoders on the turn-table and point cloud registration. The sytem's camera-projector pair is tuned to yield dense scene points at close distances. However our stereo backend has a limit on the disparity range and will break at those resolutions. The lowest camera-object distance we can accommodate is 400 mm with a 16 mm lens (see "Reconstructing a very shiny object" demo above), where we struggle due to the learnt stereo over-smoothing the disparities. Therefore, to incorporate a turn-table to our pipeline, we remove visual features from the background and force our hybrid RGBD pose estimation system (sec 4.1) to focus on the foreground using depth based masking. The depth masks are not perfect, as a result, the pose estimates for data collected with a turn-table are worse than the case when the robot is moving. In the example below we take 6 RGBD images -- 3 stereo pairs in case for the moving camera, 6 RGBD captures (left channel of stereo) with the rotating turn-table. Train on 5 and test on 1 image, we use AdaShell\(^\dagger\) for this demo. The quality of reconstruction suffers a bit for the case with turn-table, but more importantly, the current pose estimation pipeline breaks before the turn-table can rotate the object significantly. However, this is an engineering problem which we believe is solvable given we design our own robot mounted camera-projector system, which is slightly outside the scope of this work. 
+        </p>
         </h5>
     </div>
 </div>
