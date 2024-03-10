@@ -838,7 +838,7 @@
         </h3>
         <p class="text-justify ">
         <!-- <h4> -->
-            For <em><b>un-posed</b></em> RGBD images, we compare the accuracy of reconstructing the scene using VolSDF\(^{\dagger}\) and NeUS\(^{\dagger}\) with NeuralRGBD[Azinovic et al. 2022] and BundleFusion[Daiet al. 2017]. We report normalized chamfer distances (<u>lower is better</u>) across four synthetic scenes from BlendSwap.com. We use the pipeline described in section 4.1 to estimate the camera poses. For <em><b>posed</b></em> synthetic RGBD sequences, we compare the accuracy of reconstruction between VolSDF$^{\dagger}$ and PointSLAM\cite{Sandstrom2023ICCV}. We report the mean \(L_1\) distances in cm (<u>lower is better</u>) across eight synthetic scenes from the Replica Dataset. For our experiments we use 15 temporally equidistant poses from 2000 RGBD images per scene in the dataset and train VolSDF\(^{\dagger}\) for 1500 iterations (\( \sim \) 21K gradient steps). For posed images, our errors on this simulated dataset closely reflect the performance of [Gropp et al. 2020] for approximating surfaces from noise-free point clouds. We report an average improvement of 81% over PointSLAM.
+            For <em><b>un-posed</b></em> RGBD images, we compare the accuracy of reconstructing the scene using VolSDF\(^{\dagger}\) and NeUS\(^{\dagger}\) with NeuralRGBD[Azinovic et al. 2022] and BundleFusion[Daiet al. 2017]. We report normalized chamfer distances (<u>lower is better</u>) across four synthetic scenes from BlendSwap.com. We use the pipeline described in section 4.1 to estimate the camera poses. For <em><b>posed</b></em> synthetic RGBD sequences, we compare the accuracy of reconstruction between VolSDF\(^{\dagger}\) and PointSLAM [Sandstro&umlm et al. 2023]. We report the mean \(L_1\) distances in cm (<u>lower is better</u>) across eight synthetic scenes from the Replica Dataset. For our experiments we use 15 temporally equidistant poses from 2000 RGBD images per scene in the dataset and train VolSDF\(^{\dagger}\) for 1500 iterations (\( \sim \) 21K gradient steps). For posed images, our errors on this simulated dataset closely reflect the performance of [Gropp et al. 2020] for approximating surfaces from noise-free, oriented point clouds. We report an average improvement of 81% over PointSLAM.
         <!-- </h4> -->
     </p>
 
@@ -851,6 +851,65 @@
         </h5>
     </div>
 </div>
+
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h3>
+            Collecting data with a manipulator vs a turntable
+        </h3>
+        <h5>
+            At its core, our method integrates a set of posed RGBD images to train a neural 3D model. As implemented, we assume the scene to be static and the rig moving. However, with major changes to pose-estimation steps our pipeline can integrate a commercial turntable. Note that commercial turntable integrate the data using a combination of the encoders on the turntable and point cloud registration. The scanner camera-projector system is tuned to yield dense scene points, however our stereo backend has a limit on the disparity range and will break at those resolutions. Therefore, when incorporating a turntable to our pipeline, we remove visual features from the background and force our pose estimation system to focus on the foreground using depth based masking. As a result, the pose estimates for data collected with a turn table are worse than the case when the robot is moving. In the example below we take 6 RGBD images -- 3 stereo pairs in case for the moving camera, 6 RGBD captures (left channel) with the rotating turntable. Train on 5 and test on 1 image, we use AdaShell\(^\dagger\) for this demo. The quality of reconstruction suffers a bit for the case with turntable, but more importantly, the current pose estimation pipeline breaks before the turntable can rotate the object significantly. 
+        </h5>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12  ">
+<table width="100%">
+    <tr>
+        <td align="center" valign="center" width="25%">
+            <h4>Camera on robot (3 stereo pairs) </h4>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <h4> Ground Truth vs reconstruction  </h4>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <h4>Object on turntable (6 poses)  </h4>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <h4>Ground Truth vs reconstruction </h4>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:100%">
+                <video class="video" id="gnome22" loop playsinline autoPlay muted src="assets/movies/flour_rgb_normal.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome22Merge"></canvas>
+            </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:90%">
+                <video class="video" id="gnome23" loop playsinline autoPlay muted src="assets/movies/flour_bag.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome23Merge"></canvas>
+            </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:100%">
+                <video class="video" id="gnome24" loop playsinline autoPlay muted src="assets/movies/turntable_rgb_normal.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome24Merge"></canvas>
+            </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:90%">
+                <video class="video" id="gnome25" loop playsinline autoPlay muted src="assets/movies/turn_table.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome25Merge"></canvas>
+            </div>
+        </td>
+    </tr>
+</table>
+
 
 <!-- ----------------------------------- -->
 <p class="br20"></p>
