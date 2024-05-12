@@ -839,7 +839,7 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <h3>
-            Accuracy of reconstructing synthetic scanes. 
+            Accuracy of reconstructing synthetic scenes. 
         </h3>
         <p class="text-justify ">
         <!-- <h4> -->
@@ -865,7 +865,7 @@
         </h3>
         <h5>
             <p class="text-justify ">
-            At its core, our method integrates a set of posed RGBD images to train a neural 3D model. As implemented, we assume the scene to be static and the rig moving. However, our pipeline can accommodate a turn-table. Note that commercial turn-table scanners integrate the data using a combination of the encoders on the turn-table and point cloud registration. The sytem's camera-projector pair is tuned to yield dense scene points at close distances. However our stereo backend has a limit on the disparity range and will break at those resolutions. The lowest camera-object distance we can accommodate is 400 mm with a 16 mm lens (see "Reconstructing a very shiny object" demo above), where we struggle due to the learnt stereo over-smoothing the disparities. Therefore, to incorporate a turn-table to our pipeline, we remove visual features from the background and force our hybrid RGBD pose estimation system (sec 4.1) to focus on the foreground using depth based masking. The depth masks are not perfect, as a result, the pose estimates for data collected with a turn-table are worse than the case when the robot is moving. In the example below we take 6 RGBD images -- 3 stereo pairs in case for the moving camera, 6 RGBD captures (left channel of stereo) with the rotating turn-table. Train on 5 and test on 1 image, we use AdaShell\(^\dagger\) for this demo. The quality of reconstruction suffers a bit for the case with turn-table, but more importantly, the current pose estimation pipeline breaks before the turn-table can rotate the object significantly. However, this is an engineering problem which we believe is solvable given we design our own robot mounted camera-projector system, which is slightly outside the scope of this work. 
+            At its core, our method integrates a set of posed RGBD images to train a neural 3D model. As implemented, we assume the scene to be static and the rig moving. However, our pipeline can accommodate a turn-table. Note that commercial turn-table scanners integrate the data using a combination of the encoders on the turn-table and point cloud registration. The sytem's camera-projector pair is tuned to yield dense scene points at close distances. Our stereo backend has a limit on the disparity range and will break at those resolutions. The lowest camera-object distance we can accommodate is 400 mm with a 16 mm lens (see "Reconstructing a very shiny object" demo above), where we struggle due to the learnt stereo over-smoothing the disparities. To incorporate a turn-table to our pipeline, we remove visual features from the background and force our hybrid RGBD pose estimation system (sec 4.1) to focus on the foreground using depth based masking. The depth masks are not perfect, as a result, the pose estimates for data collected with a turn-table are worse than the case when the robot is moving. In the example below we take 6 RGBD images -- 3 stereo pairs in case for the moving camera, 6 RGBD captures (left channel of stereo) with the rotating turn-table. Train on 5 and test on 1 image, we use AdaShell\(^\dagger\) for this demo. The quality of reconstruction suffers a bit for the case with turn-table, but more importantly, the current pose estimation pipeline breaks before the turn-table can rotate the object significantly. At the moment, this is an engineering problem which we believe is solvable by designing our own robot mounted camera-projector system, which is outside the scope of this work. 
         </p>
         </h5>
     </div>
@@ -916,6 +916,69 @@
         </td>
     </tr>
 </table>
+</div>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h3>
+            View-point diversity or depth is required to train representations.
+        </h3>
+        <h5>
+            <p class="text-justify ">
+                In absence of depth, radiance based methods need viewpoint diversity to disambiguate between appearance and geometry. Additionally, monocular supervision is very dependent on the scene-network combination. We incorporate metric depth from stereo to capture appearance and geometry. Below we show our result on training on the ReNE reflective data sequence. ReLight My NeRF [Toschi et al. CVPR '23'] has a low view point diversity and does not supply metric depth. Our experiment below tries to train a radiance model (architechture v5 from Toschi et al.). With the given description and hyperparameters, our re-implementation of architechture v5 was unable to achieve the reported reconstruction quality. Additionally, monocular methods (as recommended by MonoSDF [Yu et al '22]) did not generate meaningful supervisions on this sequence. As a result, although we made some progress in view interpolation, the geometry recoverd in the process is meaningless.  
+        </p>
+        </h5>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+<table width="100%">
+    <tr>
+        <td align="center" valign="center" width="33%">
+            <h4>ReLightMyNeRF training images </h4>
+        </td>
+        <td align="center" valign="center" width="33%">
+            <h4> Reconstructed radiance (PSNR 23.5)</h4>
+        </td>
+        <td align="center" valign="center" width="33%">
+            <h4>Reconstructed shape</h4>
+        </td>
+        <!-- <td align="center" valign="center" width="25%">
+            <h4>Normals and edges (Right)</h4>
+        </td> -->
+    </tr>
+    <tr>
+        <td align="center" valign="center" width="100%">
+            <video width="370" height="281" controls>
+                <source src="assets/movies/rene_train.mp4" type="video/mp4">
+              </video>
+        </td>
+        <td align="right" valign="center" width="200%">
+            <div class="img-comp-container">    
+                <div class="img-comp-img">
+                  <img src="./assets/rene_gt_big.png" width="259" height="197">
+                </div>
+                <div class="img-comp-img img-comp-overlay">
+                  <img src="./assets/rene_reconst_big.png" width="259" height="197">
+                </div>
+        </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <video width="370" height="281" controls>
+                <source src="assets/movies/ply_rene_cup.mp4" type="video/mp4">
+              </video>
+        </td>
+    </tr>
+
+</table>    
+</div>
+</div>
+</div>
+
 
 
 <!-- ----------------------------------- -->
