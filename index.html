@@ -121,9 +121,9 @@
                 <div class="col-md-3 col-md-offset-4 text-center">
                     <ul class="nav nav-pills nav-justified">
                         <li>
-                            <a href="./assets/StereoMFC_compressed.pdf">
+                            <a href="./assets/sigasia_compressed-compressed.pdf">
                             <img src="./assets/small_images/pdf.png" height="50px">
-                                <h4><strong>Paper</strong></h4>
+                                <h4><strong>Paper[~4MB]</strong></h4>
                             </a>
                         </li>
                         <li> 
@@ -742,11 +742,11 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <h3>
-            Relighting faces with a single stereo pair
+            Relighting faces 
         </h3>
         <h5>
             <p class="text-justify ">
-            The reconstruction is created with 1 stereo pair -- 2 RGBD images. Time taken to refine geometry and base color: ~20 mins (100K grad steps). Time to recover partial BRDF model (~4 hrs). We recovered specularity, roughness and \(r_0\), the Fresnel reflection component. The movie is rendered approximately from the view of a camera placed between the stereo cameras. We use Blenders keyframing tool to manually choose 20 locations of the light 10 on the plane of the camera and 10 around the object and render 200 relit images using Blender. Blender does not support our exact reflectace model so like before, we drop \(r_0\), the Fresnel reflection component. We use Blender's Cycles renderer with an SPP of 2048 @ 1536x1536 pixels and rescale it to 370 x 370 pixels below. 
+            The reconstruction is created with 2 stereo pairs -- 3 RGBD images to train, 1 to test. Time taken to refine geometry and base color: ~20 mins (100K grad steps). Time to recover partial BRDF model (~4 hrs). We recovered specularity, roughness and \(r_0\), the Fresnel reflection component. The movie is rendered approximately from the view of a camera placed between the stereo cameras. We use Blenders keyframing tool to manually choose 20 locations of the light 10 on the plane of the camera and 10 around the object and render 200 relit images using Blender. Blender does not support our exact reflectace model so like before, we drop \(r_0\), the Fresnel reflection component. We use Blender's Cycles renderer with an SPP of 2048 @ 1536x1536 pixels and rescale it to 370 x 370 pixels below. 
         </p>
         </h5>
     </div>
@@ -790,7 +790,7 @@
         </td>
     </tr>
 
-    <tr>
+    <!-- <tr>
         <td align="center" valign="center" width="100%">
             <div class="video-compare-container" style="width:100%">
                 <video class="video" id="gnome18" loop playsinline autoPlay muted src="assets/movies/chrisrelight_stereo.mp4" onplay="resizeAndPlay(this)"></video>
@@ -808,7 +808,7 @@
                 <source src="assets/movies/chris_relight_synth.mp4" type="video/mp4">
               </video>
         </td>
-    </tr>
+    </tr> -->
 
 
     <tr>
@@ -836,15 +836,15 @@
 </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <h3>
             Accuracy of reconstructing synthetic scenes. 
         </h3>
         <p class="text-justify ">
-        <!-- <h4> -->
+  
             For <em><b>un-posed</b></em> RGBD images, we compare the accuracy of reconstructing the scene using VolSDF\(^{\dagger}\) and NeUS\(^{\dagger}\) with NeuralRGBD[Azinovic et al. 2022] and BundleFusion[Daiet al. 2017]. We report normalized chamfer distances (<u>lower is better</u>) across four synthetic scenes from BlendSwap.com. We use the pipeline described in section 4.1 to estimate the camera poses. For <em><b>posed</b></em> synthetic RGBD sequences, we compare the accuracy of reconstruction between VolSDF\(^{\dagger}\) and PointSLAM [Sandstro&umlm et al. 2023]. We report the mean \(L_1\) distances in cm (<u>lower is better</u>) across eight synthetic scenes from the Replica Dataset. For our experiments we use 15 temporally equidistant poses from 2000 RGBD images per scene in the dataset and train VolSDF\(^{\dagger}\) for 1500 iterations (\( \sim \) 21K gradient steps). For posed images, our errors on this simulated dataset closely reflect the performance of [Gropp et al. 2020] for approximating surfaces from noise-free, oriented point clouds. We report an average improvement of 81% over PointSLAM.
-        <!-- </h4> -->
+
     </p>
 
     </div>
@@ -855,7 +855,7 @@
             <img src="./assets/reconstruction_benchmarks.png" alt="" class="img-responsive">
         </h5>
     </div>
-</div>
+</div> -->
 
 
 <div class="row">
@@ -865,7 +865,7 @@
         </h3>
         <h5>
             <p class="text-justify ">
-            At its core, our method integrates a set of posed RGBD images to train a neural 3D model. As implemented, we assume the scene to be static and the rig moving. However, our pipeline can accommodate a turn-table. Note that commercial turn-table scanners integrate the data using a combination of the encoders on the turn-table and point cloud registration. The sytem's camera-projector pair is tuned to yield dense scene points at close distances. Our stereo backend has a limit on the disparity range and will break at those resolutions. The lowest camera-object distance we can accommodate is 400 mm with a 16 mm lens (see "Reconstructing a very shiny object" demo above), where we struggle due to the learnt stereo over-smoothing the disparities. To incorporate a turn-table to our pipeline, we remove visual features from the background and force our hybrid RGBD pose estimation system (sec 4.1) to focus on the foreground using depth based masking. The depth masks are not perfect, as a result, the pose estimates for data collected with a turn-table are worse than the case when the robot is moving. In the example below we take 6 RGBD images -- 3 stereo pairs in case for the moving camera, 6 RGBD captures (left channel of stereo) with the rotating turn-table. Train on 5 and test on 1 image, we use AdaShell\(^\dagger\) for this demo. The quality of reconstruction suffers a bit for the case with turn-table, but more importantly, the current pose estimation pipeline breaks before the turn-table can rotate the object significantly. At the moment, this is an engineering problem which we believe is solvable by designing our own robot mounted camera-projector system, which is outside the scope of this work. 
+            At its core, our method integrates a set of posed RGBD images to train a neural 3D model. As implemented, we assume the scene to be static and the rig moving. However, our pipeline can accommodate a turn-table. Note that commercial turn-table scanners integrate the data using a combination of the encoders on the turn-table and point cloud registration. The sytem's camera-projector pair is tuned to yield dense scene points at close distances. Our stereo backend has a limit on the disparity range and will break at those resolutions. The lowest camera-object distance we can accommodate is 400 mm with a 16 mm lens (see "Reconstructing a very shiny object" demo above), where we struggle due to the learnt stereo over-smoothing the disparities. To incorporate a turn-table to our pipeline, we remove visual features from the background and force our hybrid RGBD pose estimation system (sec 4.1) to focus on the foreground using depth based masking. The depth masks are not perfect, as a result, the pose estimates for data collected with a turn-table are worse than the case when the robot is moving. In the example below we take 6 RGBD images -- 3 stereo pairs in case for the moving camera, 6 RGBD captures (left channel of stereo) with the rotating turn-table. Train on 5 and test on 1 image, we use AdaShell\(^++\) for this demo. The quality of reconstruction suffers a bit for the case with turn-table, but more importantly, the current pose estimation pipeline breaks before the turn-table can rotate the object significantly. At the moment, this is an engineering problem which we believe is solvable by designing our own robot mounted camera-projector system, which is outside the scope of this work. 
         </p>
         </h5>
     </div>
@@ -927,7 +927,7 @@
         </h3>
         <h5>
             <p class="text-justify ">
-                In absence of depth, radiance based methods need viewpoint diversity to disambiguate between appearance and geometry. Additionally, monocular supervision is very dependent on the scene-network combination. We incorporate metric depth from stereo to capture appearance and geometry. Below we show our result on training on the ReNE reflective data sequence. ReLight My NeRF [Toschi et al. CVPR '23'] has a low view point diversity and does not supply metric depth. Our experiment below tries to train a radiance model (architechture v5 from Toschi et al.). With the given description and hyperparameters, our re-implementation of architechture v5 was unable to achieve the reported reconstruction quality. Additionally, monocular methods (as recommended by MonoSDF [Yu et al '22]) did not generate meaningful supervisions on this sequence. As a result, although we made some progress in view interpolation, the geometry recoverd in the process is meaningless.  
+                In absence of depth, radiance based methods need viewpoint diversity to disambiguate between appearance and geometry. Additionally, monocular supervision is very dependent on the scene-network combination. We incorporate metric depth from stereo to capture appearance and geometry. Below we show our result on training on the ReNE reflective data sequence. ReLight My NeRF [Toschi et al. '23'] has a low view point diversity and does not supply metric depth. Our experiment below tries to train a radiance model (architechture v5 from Toschi et al.). With the given description and hyperparameters, our re-implementation of architechture v5 was unable to achieve the reported reconstruction quality. Additionally, monocular methods (as recommended by MonoSDF [Yu et al '22]) did not generate meaningful supervisions on this sequence. As a result, although we made some progress in view interpolation, the geometry recoverd in the process is meaningless.  
         </p>
         </h5>
     </div>
@@ -974,7 +974,9 @@
         </td>
     </tr>
 
-</table>    
+</table> 
+   
+
 </div>
 </div>
 </div>
@@ -989,7 +991,7 @@
         <td style="padding:0px">
             <br>
             <p style="text-align:center;font-size:small;">
-            The source code and design of this webpage is adapted from <a href="https://dorverbin.github.io/refnerf/"> Ref-NeRF project page</a>. We would like to thank the authors for the inspiration.
+            Part of the source code and design of this webpage is adapted from <a href="https://dorverbin.github.io/refnerf/"> Ref-NeRF project page</a>. We would like to thank the authors for the inspiration.
             </p>
         </td>
         </tr>
