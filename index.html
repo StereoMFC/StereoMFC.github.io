@@ -88,7 +88,7 @@
     <div class="container" id="header" style="text-align: center; margin: auto;">
         <div class="row" id="title-row" style="max-width: 100%; margin: 0 auto; display: inline-block">
             <h2 class="col-md-12 text-center" id="title">
-                A Multi-flash Stereo Camera for Photo-realistic Capture of Small Scenes <br>
+                Incorporating dense depth into neural 3D representations for view synthesis and relighting <br>
                 <small>
                     <!-- (In Submission to WACV 2024) -->
                 </small>
@@ -118,7 +118,8 @@
     
     <div class="container">
         <div class="row">
-                <div class="col-md-3 col-md-offset-4 text-center">
+                <!-- <div class="col-md-3 col-md-offset-4 text-center"> -->
+                    <div class="col-md-5 col-md-offset-3 ">
                     <ul class="nav nav-pills nav-justified">
                         <li>
                             <a href="./assets/sigasia_compressed-compressed.pdf">
@@ -126,21 +127,20 @@
                                 <h4><strong>Paper[~4MB]</strong></h4>
                             </a>
                         </li>
-                        <li> 
+                        <!-- <li> 
                             <a href="">
                                 <img src="./assets/small_images/code_icon.png" height="50px"> 
                                 <h4><strong>Code</strong></h4> 
                                 <h5> Coming soon </h5> 
                             </a>
-                        </li> 
-                        <li>
+                        </li>  -->
+                        <!-- <li>
                                 <a href="">
                                 <img src="./assets/small_images/data.png" height="50px"> 
-                                <!-- <font size="-1">(Coming Soon)</font> <br>  -->
                                 <h4><strong>Data</strong></h4> 
                                 <h5> Coming soon </h5> 
                                 </a>
-                        </li>
+                        </li> -->
 
                     </ul>
                 </div>
@@ -169,19 +169,7 @@
                 <img src="./assets/opening_figure.png" alt="" class="img-responsive">
                 <!-- <img src="./img/workspace_schematic_NEW.png" alt="AltText" style="width: 771px;;height: 578px;"> -->
     </div>
-    <!-- <div class=" col-md-4 ">
-        <div class="p-3 border bg-light"></div>
-        <div>
-            <div class="row">
-                <img src="./img/sfs_bas_relief.gif" alt=""  style="width:280px;height:280px;">
-            </div>
-            <p>     </p>
-            <p>     </p>
-            <div class="row">
-                <img src="./img/sfs_images_star.gif" alt=""  style="width:280px;height:280px;">
-            </div>
-        </div>        
-    </div> -->
+
    </div>
 </div>
 <p>     </p>
@@ -315,6 +303,61 @@
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
+        <h3>
+            Capturing and relighting a human face
+        </h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12  ">
+<table width="100%">
+    <tr>
+        <td align="center" valign="center" width="25%">
+            <h4>Capture sequence (1 of 2)</h4>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <h4>Geometry</h4>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <h4>Surface Relighting </h4>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <h4>Volumetric Relighting</h4>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" valign="center" width="100%">
+            <video width="290" height="290" controls>
+                <source src="assets/movies/face_wig2_capture_no_sound.mp4" type="video/mp4">
+              </video>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <div class="sketchfab-embed-wrapper"> <iframe title="mesh" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="290" height="290" src="https://sketchfab.com/models/7bde2d0459204b37b9482f00ff8b78c9/embed"> </iframe> </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <video width="290" height="290" controls>
+                <source src="assets/movies/face_surf_relit.mp4" type="video/mp4">
+              </video>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:115%">
+                <video class="video" id="gnome26" loop playsinline autoPlay muted src="assets/movies/face_wig_volrend.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome26Merge"></canvas>
+            </div>
+        </td>
+    </tr>
+</table>
+
+</div>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
         <p class="text-justify ">
             Our system captures the scene using a stereoMFC and yields color images (left and right channels), aligned depth maps (left and right),  normals and depth edges. We use this to model the scene's radiance and geometry. After the scene's diffuse color has been captured, we use the multi-flash images and a truncated set of the Disney BRDF parameters to model the illumination dependent aspects of the scene. 
         </p>
@@ -343,7 +386,7 @@
             <h4>Crops</h4>
         </td>
         <td align="center" valign="center" width="40%">
-            <h4>Shells</h4>
+            <h4>Shells (sampling volumes)</h4>
         </td>
 
     </tr>
@@ -916,6 +959,50 @@
         </td>
     </tr>
 </table>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12  ">
+<table width="100%">
+    <tr>
+        <td align="center" valign="center" width="25%">
+            <h4>Turntable sequence </h4>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <h4> Multi-flash images  </h4>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <h4> Specular Tint </h4>
+        </td>
+        <td align="center" valign="center" width="25%">
+            <h4> Relighting </h4>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:95%">
+                <video class="video" id="gnome27" loop playsinline autoPlay muted src="assets/movies/shiny_L_R.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome27Merge"></canvas>
+            </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <div class="video-compare-container" style="width:100%">
+                <video class="video" id="gnome28" loop playsinline autoPlay muted src="assets/movies/shiny_L_R_all_data.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="gnome28Merge"></canvas>
+            </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <div class="sketchfab-embed-wrapper"> <iframe title="mesh" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="280" height="280" src="https://sketchfab.com/models/6698a4e268ab4c77a4e9d7a94347408a/embed"> </iframe> </div>
+        </td>
+        <td align="center" valign="center" width="100%">
+            <video width="285" height="285" controls>
+                <source src="assets/movies/turntable_shiny.mp4" type="video/mp4">
+              </video>
+        </td>   
+    </tr>
+</table>
+
+
 </div>
 </div>
 </div>
@@ -980,6 +1067,7 @@
 </div>
 </div>
 </div>
+
 
 
 
